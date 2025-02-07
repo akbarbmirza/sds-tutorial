@@ -15,29 +15,27 @@ figma.connect(
   {
     props: {
       // These props were automatically mapped based on your linked code:
-      variant: figma.enum("Variant", {
-        Primary: "primary",
+      design: figma.enum("Variant", {
         Neutral: "neutral",
         Subtle: "subtle",
       }),
       size: figma.enum("Size", {
         Small: "small",
-        Medium: "medium",
       }),
-      // No matching props could be found for these Figma properties:
-      // "icon": figma.instance('Icon'),
-      // "state": figma.enum('State', {
-      //   "Default": "default",
-      //   "Hover": "hover",
-      //   "Disabled": "disabled"
-      // })
+      "icon": figma.instance('Icon'),
+      isDisabled: figma.enum('State', {
+        "Disabled": true
+      })
     },
-    example: (props) => (
+    example: ({design, size, icon, isDisabled}) => (
       <IconButton
-        variant={props.variant}
-        size={props.size}
-        aria-label={/* TODO */}
-      />
+        design={design}
+        size={size}
+        isDisabled={isDisabled}
+        aria-label={"/* TODO */"}
+      >
+        {icon}
+      </IconButton>
     ),
   },
 )

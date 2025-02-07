@@ -14,11 +14,10 @@ figma.connect(
   "https://www.figma.com/design/A71qEYl40nE9sMd23vdRw1/SDS-Code-Connect-Tutorial-(Chad)?node-id=9762%3A426",
   {
     props: {
-      // These props were automatically mapped based on your linked code:
       size: figma.enum("Size", {
         Small: "small",
       }),
-      emphasis: figma.enum("Variant", {
+      design: figma.enum("Variant", {
         Neutral: "neutral",
         Subtle: "subtle",
       }),
@@ -36,10 +35,10 @@ figma.connect(
         "Disabled": true
       })
     },
-    example: ({size, emphasis, IconStart, IconEnd, label, isDisabled}) => 
+    example: ({size, design, IconStart, IconEnd, label, isDisabled}) => 
     <Button onPress={() => {}}
      size={size}
-     emphasis={emphasis}
+     design={design}
      isDisabled={isDisabled}
      >
     {IconStart}
